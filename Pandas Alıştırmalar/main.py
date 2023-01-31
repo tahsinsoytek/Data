@@ -103,16 +103,6 @@ def func(x):
             return 1
 
 
-def axis_ve_apply_mantigi(sex):
-    print(sex)
-    print(type(sex))
-    print("+")
-
-dff.loc[0:10].apply(axis_ve_apply_mantigi,axis=0)
-
-dff.loc[0:10].apply(lambda x: axis_ve_apply_mantigi(x),axis=1)
-
-
 dff["total_bill_flag"]= dff.apply(lambda x: sex_mean(x["sex"],x["total_bill"]),axis=1)
 
 
@@ -124,8 +114,6 @@ dff["total_bill_flag"]= dff[["sex","total_bill"]].apply(sex_mean(sex=dff["sex"],
 
 
 dff["total_bill_flag3"]  = dff[["sex","total_bill"]].apply(func,axis=1)
-
-
 
 
 #total_bill_flag değişkenini kullanarak cinsiyetlere göre ortalamanın altında ve üstünde olanların sayısını gözlemleyiniz.
